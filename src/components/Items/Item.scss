@@ -1,0 +1,120 @@
+@import "../../css-config/mixins.scss";
+
+
+.Item{
+    .tab{
+        display: flex;
+        gap: 0.5cm;
+        
+        .ime{
+        margin-top: 2cm;
+        border-radius: 5px;
+        justify-content: flex-start;
+        display: flex;
+        height: 10cm;
+        z-index: -1;
+        justify-content: center;
+        // margin: auto;
+        height: 210px;
+        object-fit: cover;
+        width: 50%;
+        display: block;
+        
+        img {
+            border-radius: 6px; /* Apply border-radius to the image */
+            max-width: 100%; /* Ensure the image doesn't exceed its container */
+            height: auto; /* Maintain the image's aspect ratio */
+            z-index: -1;
+            justify-content: center;
+            // margin: auto;
+            // height: 210px;
+            height: 10cm;
+            object-fit: cover;
+            width: 100%;
+            display: block;
+          }
+
+          margin-left: 1cm;
+    }
+    
+    .right{
+        width: 50%;
+        margin-top: 2cm;
+        margin-right: 0.7cm;
+        // border: 1px solid #dedede;
+        .title{
+            border: 1px solid #dedede;
+            margin-bottom: 0.5cm;
+        background-color: rgb(248, 245, 245);
+        height: 3cm;
+        border-radius: 6px;
+        padding: 0.3cm;
+        h3{
+            
+            display: flex;
+            justify-content: flex-start;
+        }
+        p{
+            display: flex;
+            justify-content: flex-start;
+        }
+       
+    }
+    
+    .contact{
+        border: 1px solid #dedede;
+        margin-bottom: 0.5cm;
+        background-color: rgb(248, 245, 245);
+        height: 3cm;
+        border-radius: 6px;
+        padding: 0.3cm;
+        h3{
+            display: flex;
+            justify-content: flex-start;
+        }
+        p{
+            display: flex;
+            justify-content: flex-start;
+        }
+       
+    }
+    
+    .address{
+        border: 1px solid #dedede;
+        margin-bottom: 0.5cm;
+        background-color: rgb(248, 245, 245);
+        height: 3cm;
+        border-radius: 6px;
+        padding: 0.3cm;
+        h3{
+            display: flex;
+            justify-content: flex-start;
+        }
+        p{
+            display: flex;
+            justify-content: flex-start;
+        }
+       
+    }
+    }
+    }
+
+    .desc{
+        border: 1px solid #dedede;
+        background-color: rgb(248, 245, 245);
+        height: auto;
+        border-radius: 6px;
+        padding: 0.3cm;
+        h3{
+            display: flex;
+            justify-content: flex-start;
+        }
+        p{
+            display: flex;
+            justify-content: flex-start;
+        }
+        margin-left: 1cm;
+        margin-right: 0.7cm;
+    }
+    
+}

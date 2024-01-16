@@ -1,0 +1,72 @@
+@import "../../../css-config/mixins.scss";
+
+    .categories{   
+
+        .thre{
+            display: flex;
+        }
+        svg{
+            // position: relative;
+            // height: ;
+            // scale: 1.3;
+            // left: 5.3cm;
+            // top: 0.7cm;
+        }
+          
+        
+        margin: 25px 0;
+        flex-wrap: wrap;
+        // justify-content: space-between; 
+
+    @include md{
+        margin: 50px 25px;
+        flex-wrap: wrap;
+        // justify-content: center; 
+    }
+    display: flex;
+        gap: 10px;
+        .category{
+            border-radius: 6px; 
+            border: 1px solid #dedede;
+            background-color: rgb(246, 244, 244);
+            width: calc(50% - 5px);
+            cursor: pointer;
+            overflow: hidden;
+            flex-basis: calc(25% - 10px); /* Adjust as needed; 25% for 4 cards in a row */
+            margin-bottom: 20px; /* Adjust as needed to add space between rows */
+            box-sizing: border-box;
+            @include md{
+                width: calc(25% - 10px);
+                height: 300px;
+                flex-basis: calc(25% - 10px); /* Adjust as needed; 25% for 4 cards in a row */
+                margin-bottom: 20px; /* Adjust as needed to add space between rows */
+                box-sizing: border-box;
+            }
+            .image{
+                height: 210px;
+            }
+            img{
+                
+                z-index: -1;
+                justify-content: center;
+                margin: auto;
+                height: 210px;
+                object-fit: cover;
+                width: 100%;
+                display: block;
+            }
+            .desc{
+                z-index: 99;
+                display: flex;
+                width: 100%;
+                margin-left: 0.5cm;
+                font-weight: 700;
+                margin-top: 0.2cm;
+            }
+            p{
+                display: flex;
+                margin-left: 0.5cm;
+            }
+            
+        }
+    }

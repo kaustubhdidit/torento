@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ChatContext } from "../../context/ChatContext";
 import { db } from "../../firebase";
 import Message from "./Message";
-import im1 from "../../assets/im2.jpg.avif"
+import im1 from "../../img/blacker.jpeg"
 
 const Messages = () => {
   const [messages, setMessages] = useState([]);
@@ -22,7 +22,7 @@ const Messages = () => {
   // console.log(messages)
 
   return (
-    <div className="messages" style={{backgroundImage: `url(${im1})`}}>
+    <div className="messages" style={{backgroundColor:'#020212'}}>
       {messages.map((m) => (
         <Message message={m} key={m.id} />
       ))}

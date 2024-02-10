@@ -36,13 +36,13 @@ function App() {
       <Router>
           <div className="containor">
             <Routes>
-              <Route path="/chats" element={localStorage.getItem('rentoToken')?<Chat/>:<Login/>} />
+              <Route path="/chats" element={<Chat/>} />
               <Route path="/" element={<Home showAlert={showAlert} />} />
               <Route path="/SignUp" element={<SignUp showAlert={showAlert}/>} />
               <Route path="/login" element={<Login showAlert={showAlert}/>} />
               <Route path="/Item" element={<Item showAlert={showAlert}/>} />
-              <Route path="/Sell" element={localStorage.getItem('rentoToken')?<Create />:<Login/>} />
-              <Route path="/Bill" element={localStorage.getItem('rentoToken')?<BillBoard/>:<Login/>} />
+              <Route path="/Sell" element={<Create/>} />
+              <Route path="/Bill" element={<BillBoard/>} />
             </Routes>
           </div>
         </Router>

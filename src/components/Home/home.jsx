@@ -8,7 +8,9 @@ import Header from '../Header/Header';
 const Home = ({home}) => {
   const [rooms, setRooms] = useState([]);
 
+
   useEffect(() => {
+   
     // Fetch data from the API
     axios.get("https://rentoback-5kdr.onrender.com/api/v1/room/roomAll")
       .then((res) => {
@@ -19,6 +21,7 @@ const Home = ({home}) => {
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
+      // window.location.reload();
   }, []);
   return (
     <div>

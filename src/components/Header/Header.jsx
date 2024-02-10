@@ -11,51 +11,28 @@ const Header = () => {
     localStorage.removeItem('rentoToken');
     navigate("/");
   }
-//   const handleOut= async(e)=>{
-//     e.preventDefault();
-
-//     const response = await fetch("http://localhost:3000/api/v1/users/logout", {
-//         method: "GET", 
-//         headers: {
-//           "Content-Type": "application/json",
-         
-//         },
-        
-//         // body: JSON.stringify({name:credential.name, email:credential.email, password:credential.password}),
-//       });
-      
-      
-//       const json = await response.json()
-//       console.log(json)
-//       if(json.success){
-//         // localStorage.setItem('token', json.authtoken);
-//         // props.showAlert("Registered successfully", "success")
-//         navigate("/");
-     
-//       }
-// }
-
 
   useEffect(() => {
-    if(token){
-
-    }
+   
+    // const token=localStorage.getItem('rentoToken')
   }, []);
 
   const navigate = useNavigate();
 
   const handleClick = (route) => {
+    console.log(token)
+    console.log("Click")
     navigate(route);
   };
 
   const handleClic = (route) => {
-      if(localStorage.getItem('rentoToken')){
+      if(token){
         
-        // console.log(token)
+        console.log("route")
         navigate(route);
       }
       else{
-        // console.log(token)
+        console.log("login")
         navigate("/login");
       }
   };
@@ -66,7 +43,7 @@ const Header = () => {
         <ul className="left">
             <li onClick={()=>handleClick("/")}>Home</li>
             <li>Rooms</li>
-            <li onClick={()=>handleClick("/chats") }>Chats</li>
+            <li onClick={()=>handleClic("/chats") }>Chats</li>
             {/* <li>Search By</li> */}
         </ul>
         <ul className="right">

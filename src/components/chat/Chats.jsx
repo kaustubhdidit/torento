@@ -35,7 +35,7 @@ const Chats = () => {
     
     <div className="chats">
       <br />
-       <span style={{ position:'relative',right:'3.2cm',fontSize:'0.7cm',fontWeight:'bold',backgroundImage: "linear-gradient(to right, #4FDCE4, #E7BF6A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>Your Chats</span>
+       <span style={{ position:'relative',right:'3.2cm',fontSize:'0.9cm',fontWeight:'bold',backgroundImage: "linear-gradient(to right, #4FDCE4, #E7BF6A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>Your Chats</span>
        <br />
       {Object.entries(chats)?.sort((a,b)=>b[1].date - a[1].date).map((chat) => (
         
@@ -50,7 +50,11 @@ const Chats = () => {
           {chat[1].userInfo.displayName}
 </span>
             {/* <span>{chat[1].userInfo.displayName}</span> */}
-            <p style={{fontWeight:'bold'}}>{chat[1].lastMessage?.text}</p>
+            <p style={{fontWeight:'bold', 
+      maxWidth: '325px', 
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis'}}>{chat[1].lastMessage?.text}</p>
           </div>
         </div>
       ))}

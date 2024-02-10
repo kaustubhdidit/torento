@@ -232,11 +232,16 @@
         }
 
         .userChatInfo {
+          display: flex;
+          flex-direction: column;
+          justify-content: left;
+          align-items: flex-start;
           position: relative;
           left: 0.7cm;
           span {
             font-size: 18px;
             font-weight: 500;
+            // position: absolute;
           }
           p {
             font-size: 14px;
@@ -247,6 +252,18 @@
     }
     .chat {
       flex: 2;
+      .selechat{
+        background-color: #020212;
+        height: 80vw;
+        font-size: 2cm;
+        font-weight: bolder;
+        .spanner{
+position: relative;
+        top: 5cm;
+        }
+        
+        
+      }
 
       .chatInfo {
         height: 50px;
@@ -294,11 +311,21 @@
           }
           .messageContent {
             max-width: 80%;
+            width: 14cm;
             display: flex;
+
             flex-direction: column;
             gap: 10px;
+            span{
+              position: relative;
+              // left: 6px;
+              text-align: left;
+            }
 
             p {
+              display: flex;
+              text-align: left;
+              justify-content: flex-start;
               color: white;
               background-color: rgb(68, 197, 102);
               padding: 10px 20px;
@@ -316,7 +343,16 @@
 
             .messageContent {
               align-items: flex-end;
-              p {
+              width: 14cm;
+              span{
+                // right: 6px;  
+              }
+              p {       
+                display: flex;       
+                flex-wrap: wrap;
+                max-width: 14cm;
+
+                text-align: left;
                 background-color: #4051eb;
                 color: white;
                 border-radius: 10px 0px 10px 10px;
@@ -330,7 +366,7 @@
         position: relative;
         // top: 1.5cm;
         height: 60px;
-        background-image: linear-gradient(to right, #46555a, #020d18);
+        background-image: linear-gradient(to right,#020d18, #46555a, #020d18);
         padding: 10px;
         padding-bottom: 13px;
         display: flex;

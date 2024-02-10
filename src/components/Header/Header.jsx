@@ -5,8 +5,10 @@ import { useContext, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 const Header = () => {
 
+  const token=localStorage.getItem('rentoToken')
+
   const handleOut=()=>{
-    localStorage.removeItem('token');
+    localStorage.removeItem('rentoToken');
     navigate("/");
   }
 //   const handleOut= async(e)=>{
@@ -35,7 +37,7 @@ const Header = () => {
 
 
   useEffect(() => {
-    if(localStorage.getItem('token')){
+    if(token){
 
     }
   }, []);
@@ -47,12 +49,13 @@ const Header = () => {
   };
 
   const handleClic = (route) => {
-      if(localStorage.getItem('token')){
+      if(localStorage.getItem('rentoToken')){
         
-        // console.log(localStorage.getItem('token'))
+        // console.log(token)
         navigate(route);
       }
       else{
+        // console.log(token)
         navigate("/login");
       }
   };
@@ -63,18 +66,18 @@ const Header = () => {
         <ul className="left">
             <li onClick={()=>handleClick("/")}>Home</li>
             <li>Rooms</li>
-            <li>Pricing</li>
-            <li>Search</li>
+            <li onClick={()=>handleClick("/chats") }>Chats</li>
+            {/* <li>Search By</li> */}
         </ul>
         <ul className="right">
-        <li onClick={()=>handleClick("/login") } style={{ display: localStorage.getItem('token') ? 'none':'' }}
+        <li onClick={()=>handleClick("/login") } style={{ display: localStorage.getItem('rentoToken') ? 'none':'' }}
 >Login</li>
-<li onClick={handleOut} style={{ display: !localStorage.getItem('token') ? 'none':'' }}
+<li onClick={handleOut} style={{ display: !localStorage.getItem('rentoToken') ? 'none':'' }}
 >Logout</li>
 <li onClick={()=>handleClic("/Bill")}>BillBoard</li>
         <li onClick={()=>handleClic("/Sell")}>Sell</li>
         </ul>
-        <div className="center">TORENTO</div>       
+        <div className="center" style={{backgroundImage: "linear-gradient(to right,#808BE6, #3ACBE9)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", textTransform: "capitalize"}}>TORENTO</div>       
     </div>
     </header>
   )

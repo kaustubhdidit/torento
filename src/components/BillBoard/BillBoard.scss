@@ -6,7 +6,14 @@
             // display: flex;
         }
       
-     
+     .form-check{
+        position: relative;
+        top:0.1cm;
+        width:3cm;
+     }
+     .sup{
+        display: flex;
+     }
         
         margin: 25px 0;
         flex-wrap: wrap;
@@ -23,7 +30,7 @@
 
             // height: ;
             scale: 1.3;
-            left: 3.4cm;
+            // left: 5.4cm;
             // bottom: 1.38cm;
             // position: fixed;
         }
@@ -33,7 +40,8 @@
     }
 .form-check-label{
     position: relative;
-    right: 3cm;
+    // right: 3cm;
+    bottom: 0.04cm;
 }
     .form-check-input:checked{
         background-color: #fa2828; /* Change label color when checked */
@@ -47,10 +55,11 @@
                 z-index: 99;
                 // height: ;
                 scale: 1.3;
-                left: 3.4cm;
+                bottom: 0.8cm;
+                left: 6.8cm;
                 // left: 5.3cm;
                 // top: 0.7cm;
-                bottom: 1.3cm;
+                // bottom: 0.1cm;
                 // position: fixed;
             }
            

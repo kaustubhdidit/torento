@@ -2,20 +2,28 @@ import React from "react";
 import { useState } from "react";
 import {useNavigate} from "react-router-dom";
 import Home from "../Home/home";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useLocation } from "react-router-dom";
 import Alert from "../Alert";
+import loader from "../../img/loader1.gif"
 import torent from "../../assets/loginlog.png"
-
+import "./Login.scss";
+import { auth } from "../../firebase";
 
 const Login = (props) => {
+  const [loading, setLoading] = useState(false);
 
   const [credentials, setCredentials] = useState({email:"" , password:""})
   const navigate= useNavigate();
 
+  const email = credentials.email;
+            const password =credentials.password;
+
   const handleSubmit= async(e)=>{
+    setLoading(true);
       e.preventDefault();
 
-      const response = await fetch("https://totento-backend.onrender.com/api/v1/users/login", {
+      const response = await fetch("https://rentoback-5kdr.onrender.com/api/v1/users/login", {
           method: "POST", 
           headers: {
             "Content-Type": "application/json",
@@ -26,21 +34,28 @@ const Login = (props) => {
         });
         
         const json = await response.json()
-        console.log(json)
+        // console.log(json)
         if(json.success){
           
           // const userId = extractUserIdFromToken(token);
           
           
-          localStorage.setItem('token', json.authtoken);
-          const token = localStorage.getItem('token');
+          localStorage.setItem('rentoToken', json.authtoken);
+          const token = localStorage.getItem('rentoToken');
           // console.log(token);
-          props.showAlert("Logged in successfully", "success")
-          console.log(localStorage.getItem('token').json)
+          // props.showAlert("Logged in successfully", "success")
+          // console.log(localStorage.getItem('rentoToken').json)
+          const res=await signInWithEmailAndPassword(auth, email, password);
+          localStorage.setItem('fbuid',res.user.uid)
+          // console.log("paka")
+          // console.log(res)
+          // console.log("paka")
+          setLoading(false);
           navigate("/");
        
         }
         else{
+          setLoading(false);
           props.showAlert("Invalid details", "danger")
         }
   }
@@ -53,12 +68,12 @@ const Login = (props) => {
   return (
     <>
 
-<div>
+<div style={{ display:'flex',justifyContent:'center',alignItems:'center'}}>
       {/* <h1 className="tope">TORENTO</h1> */}
       <img src={torent} style={{width:'300px',  marginTop:'2cm'}} alt="" />
       </div>
     
-    <form onSubmit={handleSubmit} style={{ width: '9cm', margin: 'auto', marginTop:'1cm' }}>
+    <form onSubmit={handleSubmit} style={{ width: '9cm', margin: 'auto' }}>
       <div className="mb-3" >
         <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
         <input
@@ -83,9 +98,12 @@ const Login = (props) => {
             onChange={onChange}
           />
       </div>
-      <button type="submit" className="btn btn-primary">Submit</button>
+      <button disabled={loading} style={{backgroundColor:'#0d6efd'}} type="submit" className="btn btn-primary">Submit</button>
     </form>
-    <Link style={{color:'gray'}} to="/SignUp" role="button">SignUp</Link>
+    <Link disabled={loading} style={{color:'gray'}} to="/SignUp" role="button">SignUp</Link>
+    <div style={{display:'flex', justifyContent:'center'}}>
+    <img  style={{display:loading?'':'none',height:"2cm"}} src={loader} alt="" />
+    </div>
     </>
   );
 }

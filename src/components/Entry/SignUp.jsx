@@ -1,22 +1,36 @@
 import React from 'react'
 import { useState } from "react";
 import {useNavigate} from "react-router-dom";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth, db, storage } from "../../firebase";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { doc, setDoc } from "firebase/firestore";
 import Home from "../Home/home";
 import { Link, useLocation } from "react-router-dom";
 import Alert from "../Alert";
+import loader from "../../img/loader1.gif"
+import "./SignUp.scss";
 import torentologo from "../../assets/torentologo.png"
 
 const SignUp = (props) => {
 
-
+  const [loading, setLoading] = useState(false);
 
         const [credential, setCredential] = useState({name:"",email:"" , password:""})
         const navigate= useNavigate();
       
         const handleSubmit= async(e)=>{
+          setLoading(true);
             e.preventDefault();
+
+            const displayName = credential.name;
+            const email = credential.email;
+            const password =credential.password;
+            // console.log(displayName)
+            // console.log(email)
       
-            const response = await fetch("https://totento-backend.onrender.com/api/v1/users/new", {
+      
+            const response = await fetch("https://rentoback-5kdr.onrender.com/api/v1/users/new", {
                 method: "POST", 
                 headers: {
                   "Content-Type": "application/json",
@@ -25,19 +39,37 @@ const SignUp = (props) => {
                 
                 body: JSON.stringify({name:credential.name, email:credential.email, phone:credential.phone, password:credential.password}),
               });
+     
               
-              
+              // await setDoc(doc(db, "userChats", res.user.uid), {});
+
               const json = await response.json()
-              console.log(json)
+              // console.log(json)
               if(json.success){
-                localStorage.setItem('token', json.authtoken);
+                const res = await createUserWithEmailAndPassword(auth, email, password);
+
+                await updateProfile(res.user, {
+                  displayName,
+                });
+                localStorage.setItem('fbuid',res.user.uid)
+
+                await setDoc(doc(db, "users", res.user.uid), {
+                  uid: res.user.uid,
+                  displayName,
+                  email,
+                });
+                await setDoc(doc(db, "userChats", res.user.uid), {});
+
+                localStorage.setItem('rentoToken', json.authtoken);
                 props.showAlert("Registered successfully", "success")
-                console.log(localStorage.getItem('token').json)
+                // console.log(localStorage.getItem('rentoToken').json)
+                setLoading(false);
                 navigate("/");
              
               }
               else{
                 props.showAlert("Invalid details", "danger")
+                setLoading(false);
               }
         }
       
@@ -64,7 +96,8 @@ const SignUp = (props) => {
     {/* <div className="left" style={{display: 'flex', width: '38%', height:'100vh', backgroundColor: 'black'}}><h1 className="tope" style={{color:'white', marginTop:'8cm'}}>TORENTO</h1></div> */}
         <div className='right' style={{marginTop:'5.7cm', marginLeft:'7cm'}}>
       
-      <h1>SignUp</h1>
+      <h2 class="font-bold text-xl">SignUp</h2>
+      <br />
     
     <form onSubmit={handleSubmit} style={{ width: '9cm', margin: 'auto' }}>
     <div className="mb-3" >
@@ -117,10 +150,13 @@ const SignUp = (props) => {
             placeholder='Password'
           />
       </div>
-      <button type="submit" className="btn btn-primary">SignUp</button>
+      <button disabled={loading} style={{backgroundColor:'#0d6efd'}} type="submit" className="btn btn-primary">SignUp</button>
     </form>
-    <Link style={{color:'gray'}} to="/login" role="button">Login</Link>
+    <Link disabled={loading} style={{color:'gray'}} to="/login" role="button">Login</Link>
+    <img  style={{display:loading?'':'none',height:"2cm", position:'relative',left:'1.7cm'}} src={loader} alt="" />
     </div>
+
+   
 
     </div>
     </>

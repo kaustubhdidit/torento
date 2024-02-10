@@ -11,6 +11,20 @@
         padding: 0 40px;
     }
 
+    li:hover{
+        // transition: all;
+       
+        // padding: 7px;
+        //    background-color: white; 
+           background-image: linear-gradient(to right, #304e6c, #118bb7);
+        //    color: black;
+    }
+    li{
+        border-radius: 8px;
+        padding-left: 4px;
+        padding-right: 4px;
+        transition: all 0.2s ease;
+    }
     .header-content{
         display: flex;
         justify-content: space-between;
@@ -20,8 +34,9 @@
         @include md{
             height: 80px;
         }
+        
         .left{
-            margin-top: 0.5cm;
+            // margin-top: 0.5cm;
             list-style-type: none;
             display: none;
             gap: 25px;
@@ -36,7 +51,7 @@
             }
         }
         .right{
-            margin-top: 0.5cm;
+            // margin-top: 0.5cm;
             list-style-type: none;
             display: none;
             gap: 25px;

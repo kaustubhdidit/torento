@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import Sender from "./components/chat/Chat.jsx"
+import Sidebar from './components/chat/Sidebar.jsx';
 import Chat from "./pages/Chat.jsx";
 import "./style.scss";
 import { useState } from "react";
@@ -36,6 +38,8 @@ function App() {
       <Router>
           <div className="containor">
             <Routes>
+            <Route path="/sender" element={<Sender/>} />
+            <Route path="/sidebar" element={<Sidebar/>} />
               <Route path="/chats" element={<Chat/>} />
               <Route path="/" element={<Home showAlert={showAlert} />} />
               <Route path="/SignUp" element={<SignUp showAlert={showAlert}/>} />

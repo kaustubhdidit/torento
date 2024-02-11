@@ -91,7 +91,9 @@ const Create = (props) => {
     <>
     <Header/>
     <br />
-    <h1  className='head'>Add your room details</h1>
+    <di style={{display:'flex',justifyContent:'center'}}>
+    <h1  className='head'  >Add your room details</h1>
+    </di>
     
 <br />
 <div className='holder' style={{ display:'flex',justifyContent:'center',}}>
@@ -162,6 +164,7 @@ const Create = (props) => {
 <div style={{display:'flex', justifyContent:'center'}}>
     <img  style={{display:loading?'':'none',height:"2cm"}} src={loader} alt="" />
     </div>
+
    
     </>
   )

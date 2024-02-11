@@ -3,11 +3,12 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { ChatContext } from "../../context/ChatContext";
 import { db } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 import "./Chats.scss"
 
 const Chats = () => {
   const [chats, setChats] = useState([]);
-
+const navigate = useNavigate();
   const { currentUser } = useContext(AuthContext);
   const { dispatch } = useContext(ChatContext);
 
@@ -30,6 +31,8 @@ const Chats = () => {
 
   const handleSelect = (u) => {
     dispatch({ type: "CHANGE_USER", payload: u });
+    if (window.innerWidth <= 760)
+   { navigate('/sender');}
   };
 
   return (

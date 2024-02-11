@@ -1,9 +1,180 @@
 @import "../../css-config/mixins.scss";
 @media(max-width: 760px){
+  .chat {
+    flex: 2;
+    .selechat{
+      background-color: #020212;
+      height: 80vw;
+      font-size: 2cm;
+      font-weight: bolder;
+      .spanner{
+position: relative;
+      top: 5cm;
+      }
+      
+      
+    }
+
+    .chatInfo {
+      height: 50px;
+      background-color: #020212;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      color: lightgray;
+    }
+
+    .chatIcons {
+      display: flex;
+      gap: 10px;
+
+      img {
+        height: 24px;
+        cursor: pointer;
+      }
+    }
+
+    .messages {
+      background-color: #ffffff;
+      padding: 10px;
+      height: calc(100% - 110px);
+      overflow: scroll;
+
+      .message {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+
+        .messageInfo {
+          display: flex;
+          flex-direction: column;
+          color: gray;
+          font-weight: 300;
+
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+        .messageContent {
+          max-width: 80%;
+          width: 14cm;
+          display: flex;
+
+          flex-direction: column;
+          gap: 10px;
+          span{
+            position: relative;
+            // left: 6px;
+            text-align: left;
+          }
+
+          p {
+            display: flex;
+            text-align: left;
+            justify-content: flex-start;
+            color: white;
+            background-color: rgb(68, 197, 102);
+            padding: 10px 20px;
+            border-radius: 0px 10px 10px 10px;
+            max-width: max-content;
+          }
+
+          img {
+            width: 50%;
+          }
+        }
+
+        &.owner {
+          flex-direction: row-reverse;
+
+          .messageContent {
+            align-items: flex-end;
+            width: 14cm;
+            span{
+              // right: 6px;  
+            }
+            p {       
+              display: flex;       
+              flex-wrap: wrap;
+              max-width: 14cm;
+
+              text-align: left;
+              background-color: #4051eb;
+              color: white;
+              border-radius: 10px 0px 10px 10px;
+            }
+          }
+        }
+      }
+    }
+
+    .input {
+      position: relative;
+      // top: 1.5cm;
+      height: 60px;
+      background-image: linear-gradient(to right,#020d18, #46555a, #020d18);
+      padding: 10px;
+      padding-bottom: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      input {
+        // width: 21.6cm;
+        border: none;
+        outline: none;
+        color: #2f2d52;
+        // padding-left: 10px;
+        font-size: 18px;
+        border-radius: 10px;
+        padding: 4px;
+        &::placeholder {
+        
+          color: lightgray;
+        }
+      }
+      input::placeholder {
+        font-style: italic; /* Make the placeholder text italic */
+        color: lightgray;
+      }
+
+      .send {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+       
+
+        img {
+          // background-color: rgb(0, 0, 0);
+          height: 28px;
+          // padding-right: 2px;
+          // border-radius: 4px;
+          // padding: 4px;
+          cursor: pointer;
+        }
+
+        button {
+          
+          border: none;
+          padding: 5px 15px;
+          color: white;
+          border-radius: 20px;
+          background-color: #100b0b;
+          background-image: linear-gradient(to right, #020d18, #46555a);
+          cursor: pointer;
+        }
+      }
+    }
+  }
   .chat{
     // display: none;
     // width: 1px;
     position: relative;
+    height: 203.5vw;
     top: 2cm;
   }
    

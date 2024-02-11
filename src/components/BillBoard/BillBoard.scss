@@ -16,8 +16,8 @@
       
      .form-check{
         position: relative;
-        top:0.1cm;
-        left: 0.5cm;
+        // top:0.55cm;
+        left: 0.77cm;
          bottom: 0.4cm;
         width:3cm;
      }
@@ -79,6 +79,7 @@
             width: calc(50% - 5px);
             cursor: pointer;
             overflow: hidden;
+            // height: 10cm;
             flex-basis: calc(25% - 10px); /* Adjust as needed; 25% for 4 cards in a row */
             margin-bottom: 20px; /* Adjust as needed to add space between rows */
             box-sizing: border-box;
@@ -115,9 +116,35 @@
                 display: flex;
                 margin-left: 0.5cm;
             }
+           
             
         }
     }
+
+    @media(min-width: 760px){
+        .sg{
+position: relative;
+top: 1.2cm;
+right: 0.3cm;
+scale: 1.1;
+        }
+        #stup{
+            position: relative;
+            top: 0.9cm;
+            right: 3.5cm;
+        }
+        .form-check {
+            position: relative;
+            top: 1.2cm;
+            // left: 1cm;
+            width: 3cm;
+            scale: 1.2;
+        }
+        #kati{
+            height: 320px;
+        }
+    }
+
     @media(max-width: 760px){
         #gories{
             position: relative;
@@ -139,7 +166,7 @@
           
             .category{
                 width: 98%; 
-                // height: 10cm;
+                // height: 12cm;
                 padding-bottom: 8px;
                 margin-bottom: 20px; 
                 // margin-left: 8px;

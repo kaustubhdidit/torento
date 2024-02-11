@@ -5,15 +5,33 @@ import "./Chat.scss"
 import More from "../../img/more.png";
 import Messages from "./Messages";
 import Input from "./Input";
+import { useEffect, useState } from "react";
 import { ChatContext } from "../../context/ChatContext";
 import { AuthContext } from '../../context/AuthContext'
+import Header from "../Header/Header";
 
 const Chat = () => {
   const {currentUser} = useContext(AuthContext)
   const { data } = useContext(ChatContext);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 760);
+    };
+
+    handleResize(); // Call the function once to set initial state
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
-    <div className="chat">
+    <>
+   {isMobile && <Header />}
+    <div className="chat" >
       {data.user?.displayName ? ( // Check if displayName is present
         <>
           <div className="chatInfo" >
@@ -32,6 +50,7 @@ const Chat = () => {
       )
       }
     </div>
+    </>
   );
 };
 

@@ -295,12 +295,12 @@ const BillBoard = ({ props }) => {
         <h1 className='head'>Your listed rooms</h1>
         <div className="categories" id="gories">
           {rooms.map((i) => (
-            <div className="category" key={i._id}>
+            <div className="category" id="kati" key={i._id}>
               <div className="image" onClick={() => handleClick(i)}><img src={i.photo} /></div>
               <div className="thre">
                 <div className="left">
                 <div className="desc">Price:&nbsp; <span style={{ borderRadius:'14px', paddingInline:"5px" ,fontWeight:'bold', color:'white'}}>₹{i.price}</span></div>
-                <p style={{fontWeight:'bold', marginTop:'3px'}}>Title:&nbsp;<span style={{ borderRadius:'14px', paddingInline:"5px" ,fontWeight:'bold', color:'white',  display: 'inline-block',
+                <p id="stup" style={{fontWeight:'bold', marginTop:'3px'}}>Title:&nbsp;<span style={{ borderRadius:'14px', paddingInline:"5px" ,fontWeight:'bold', color:'white',  display: 'inline-block',
       maxWidth: '225px', 
       whiteSpace: 'nowrap',
       overflow: 'hidden',

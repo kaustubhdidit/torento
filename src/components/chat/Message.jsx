@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { ChatContext } from "../../context/ChatContext";
+import "./Message.scss"
 
 const Message = ({ message }) => {
   const { currentUser } = useContext(AuthContext);
@@ -15,7 +16,7 @@ const Message = ({ message }) => {
   const dateString = message.date.toDate().toLocaleString();
 
   return (
-    <div style={{display:(message.text || message.img)?'':'none'}}>
+    <div className="msgbox" style={{display:(message.text || message.img)?'':'none'}}>
     <div
       ref={ref}
       className={`message ${message.senderId === currentUser.uid && "owner"}`}

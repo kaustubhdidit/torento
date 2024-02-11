@@ -1,0 +1,11 @@
+@import "../../css-config/mixins.scss";
+@media(max-width: 760px){
+  .input{
+   width: 11.3cm;
+   input{
+    width: 7.8cm;
+    // display: none;
+  }
+  }
+  
+}

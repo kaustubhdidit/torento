@@ -5,20 +5,25 @@
         .thre{
             display: flex;
         }
-        svg{
-            // position: relative;
-            // height: ;
-            // scale: 1.3;
-            // left: 5.3cm;
-            // top: 0.7cm;
-        }
+        // svg{
+        //     // position: relative;
+        //     // height: ;
+        //     // scale: 1.3;
+        //     // left: 5.3cm;
+        //     // top: 0.7cm;
+        // }
           
         
         margin: 25px 0;
         flex-wrap: wrap;
         // justify-content: space-between; 
 
+      
+
     @include md{
+        .category{
+            width: 4cm;
+        }
         margin: 50px 25px;
         flex-wrap: wrap;
         // justify-content: center; 
@@ -73,4 +78,15 @@
             }
             
         }
+    }
+    @media(max-width: 760px){
+        .categories{
+            display: block;
+            .category{
+                width: 100%; 
+                
+                margin-bottom: 20px; 
+            }
+        }
+       
     }

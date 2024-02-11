@@ -1,0 +1,10 @@
+@import "../../css-config/mixins.scss";
+@media(max-width: 760px){
+  .chat{
+    // display: none;
+    // width: 1px;
+    position: relative;
+    top: 2cm;
+  }
+   
+}

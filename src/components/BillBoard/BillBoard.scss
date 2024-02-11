@@ -1,4 +1,12 @@
 @import "../../css-config/mixins.scss";
+.modal-header{
+    background-image: linear-gradient(to right, #3a8fd0, #0b0738);
+}
+.modal-title{
+    background: linear-gradient(to right, #dbaac3, #acb4bb); /* Change colors as needed */
+    -webkit-background-clip: text; /* Clip text to the background's shape */
+    -webkit-text-fill-color: transparent;
+}
 
     .categories{   
 
@@ -9,6 +17,8 @@
      .form-check{
         position: relative;
         top:0.1cm;
+        left: 0.5cm;
+         bottom: 0.4cm;
         width:3cm;
      }
      .sup{
@@ -107,4 +117,44 @@
             }
             
         }
+    }
+    @media(max-width: 760px){
+        #gories{
+            position: relative;
+            top: 2cm;
+        }
+        .categories{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+         
+
+            .form-check {
+                position: relative;
+                top: 0.4cm;
+                left: 0.65cm;
+                width: 3cm;
+                scale: 1.1;
+            }
+          
+            .category{
+                width: 98%; 
+                // height: 10cm;
+                padding-bottom: 8px;
+                margin-bottom: 20px; 
+                // margin-left: 8px;
+                // margin-right: 8px;
+            }
+        }
+        .sg{
+            gap: 1cm;
+            position: relative;
+            top: 0.7cm;
+            left: 0.3cm;
+            scale: 1.2;
+            svg{
+               
+            }
+        }
+       
     }

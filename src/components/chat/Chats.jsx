@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { ChatContext } from "../../context/ChatContext";
 import { db } from "../../firebase";
+import "./Chats.scss"
 
 const Chats = () => {
   const [chats, setChats] = useState([]);
@@ -35,7 +36,7 @@ const Chats = () => {
     
     <div className="chats">
       <br />
-       <span style={{ position:'relative',right:'3.2cm',fontSize:'0.9cm',fontWeight:'bold',backgroundImage: "linear-gradient(to right, #4FDCE4, #E7BF6A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>Your Chats</span>
+       <span className="ychats"  style={{ fontSize:'0.9cm',fontWeight:'bold',backgroundImage: "linear-gradient(to right, #4FDCE4, #E7BF6A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>Your Chats</span>
        <br />
       {Object.entries(chats)?.sort((a,b)=>b[1].date - a[1].date).map((chat) => (
         

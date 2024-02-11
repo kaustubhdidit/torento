@@ -1,0 +1,10 @@
+@import "../../css-config/mixins.scss";
+@media(max-width: 760px){
+    .sidebar{
+      // height: 300vw;
+      // display: none;
+      top: 2cm;
+      // z-index: 99;
+    }
+     
+  }

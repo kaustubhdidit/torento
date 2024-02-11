@@ -1,11 +1,14 @@
 @import "../../css-config/mixins.scss";
 
 h1{
-    max-width: 300px;
+    // max-width: 300px;
     // color: aqua;
     font-size: 54px;
     line-height: 20px;
     margin-bottom: 20px;
+    background: linear-gradient(to right, #994040, #07447e); /* Change colors as needed */
+    -webkit-background-clip: text; /* Clip text to the background's shape */
+    -webkit-text-fill-color: transparent;
     @include md{
         max-width: 500px;
     font-size: 38px;
@@ -17,10 +20,15 @@ h1{
         content: "";
         display: block;
         margin-top: 5px;
+        z-index: -99;
         margin-left:90px ;
         width: 200px;
         height: 8px;
         background-color: #000000;
+        background-image: linear-gradient(to right, #638e92, #5c3030);
+        // background-image: linear-gradient(to right, #994040, #07447e); /* Change colors as needed */
+        // -webkit-background-clip: text; /* Clip text to the background's shape */
+        // -webkit-text-fill-color: transparent;
         @include md {
             margin-top: 10px;
         }
@@ -40,4 +48,29 @@ h1{
     margin-top: 90px;
     margin-bottom: 1.5cm;
     }
+}
+
+@media(max-width: 760px){
+    .head{
+        padding-top: 1cm;
+        padding-bottom: 0.2cm;
+        font-weight: bold;
+        font-size: 1cm;
+     
+    }
+    .layout{
+        position: relative;
+        top: 2cm;
+        // z-index: -99;
+    }
+    .head{
+        position: relative;
+        top: 2cm; 
+        // z-index: -99;
+    }
+    h1:after {
+        position: relative;
+        top: 0.2cm;
+    }
+   
 }

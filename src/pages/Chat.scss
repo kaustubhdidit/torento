@@ -1,0 +1,10 @@
+@import "../css-config/mixins.scss";
+@media(max-width: 760px){
+   .container{
+      display: block;
+   //  height: 5cm;
+   height: 100vw;
+  
+   }
+   
+}

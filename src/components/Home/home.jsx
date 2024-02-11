@@ -36,6 +36,7 @@ const Home = ({home}) => {
                      </div> */}
         <h1  className='head'>Best rooms near you</h1>
             <div className="layout">
+              
          <Category/>
             </div>
       </div>

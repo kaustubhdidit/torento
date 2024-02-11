@@ -3,6 +3,7 @@ import Sidebar from '../components/chat/Sidebar'
 import Chat from '../components/chat/Chat'
 import { useLocation , useNavigate} from 'react-router-dom';
 import Header from "../components/Header/Header"
+import "./Chat.scss"
 
 const Home = (props) => {
   const location = useLocation();
@@ -15,6 +16,7 @@ const Home = (props) => {
      
       <div className="container">
         <Sidebar/>
+
         <Chat/>
       </div>
     </div>

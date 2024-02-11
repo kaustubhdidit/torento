@@ -39,7 +39,7 @@
           margin-left: 1cm;
     }
     
-    .right{
+    .rightIt{
         width: 50%;
         margin-top: 2cm;
         margin-right: 0.7cm;
@@ -77,6 +77,13 @@
         p{
             display: flex;
             justify-content: flex-start;
+        }
+        svg{
+            position:relative;
+            //  top:0.4cm;
+            bottom: 0.9cm;
+             left:15cm;
+              scale:2.3;
         }
        
     }
@@ -125,3 +132,54 @@
     }
     
 }
+
+@media(max-width: 760px){
+    #hea{
+        position: relative;
+        bottom: 2cm;
+    }
+  .Item{
+    position: relative;
+    top: 2cm;
+   
+    .tab{
+        display: block;
+        // width: 98%;
+        .ime{
+            width: 98%;
+            margin-left: 0.12cm;
+            // right: 1cm;
+         img{
+            // width: 100%;
+            position: relative;
+            bottom: 1cm;
+            height: 8cm;
+        }
+    }
+    .rightIt{
+        
+        width: 98%;
+        margin-left: 0.12cm;
+        .title{
+            height: 2cm;
+        }
+        .contact{
+            height: 2cm;
+            svg{
+                position: relative;
+                left: 9cm;
+                top: -1cm;
+                scale: 2;
+                
+            }
+        }
+    }
+   
+    }
+    .desc{
+        margin-left: 0.12cm;;
+        margin-right: 0.12cm;;
+    }
+   
+  }
+   }

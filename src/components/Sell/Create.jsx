@@ -90,9 +90,11 @@ const Create = (props) => {
     return (
     <>
     <Header/>
+    <br />
+    <h1  className='head'>Add your room details</h1>
     
 <br />
-<div style={{ display:'flex',justifyContent:'center', position:'relative', left:'0.8cm'}}>
+<div className='holder' style={{ display:'flex',justifyContent:'center',}}>
     <form onSubmit={handleSubmit} style={{  margin: 'auto', width:'9cm' }}>
     <div className="custom-file" >
         <input type="file" style={{color:'gray'}} className="custom-file-input" id="file-upload" 

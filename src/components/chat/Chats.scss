@@ -1,0 +1,13 @@
+@import "../../css-config/mixins.scss";
+
+.ychats{
+  position:relative;
+  right:3.2cm;
+}
+
+@media(max-width: 760px){
+ .ychats{
+  right:2.2cm;
+ }
+   
+}

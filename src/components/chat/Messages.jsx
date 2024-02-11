@@ -4,7 +4,7 @@ import { ChatContext } from "../../context/ChatContext";
 import { db } from "../../firebase";
 import Message from "./Message";
 import im1 from "../../img/blacker.jpeg"
-
+import "./Messages.scss"
 const Messages = () => {
   const [messages, setMessages] = useState([]);
   const { data } = useContext(ChatContext);

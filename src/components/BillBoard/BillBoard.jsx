@@ -191,7 +191,7 @@ const BillBoard = ({ props }) => {
       </Button>
 
       <Modal show={showModal} onHide={handleClose}>
-        <Modal.Header style={{display:'flex', border:'1px solid gray',  justifyContent:'center', backgroundColor:'black'}}>
+        <Modal.Header style={{display:'flex', border:'1px solid gray',  justifyContent:'center'}}>
           <Modal.Title style={{fontWeight:'bolder', color:'white'}}>Edit Room Details</Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -272,6 +272,8 @@ const BillBoard = ({ props }) => {
                   />
                 </div>
 
+                <div style={{fontStyle:'italic', color:'gray'}}>**Each field,except 'Price', must contain atleast 5 characters**</div>
+
 
               </form>
         </Modal.Body>
@@ -291,7 +293,7 @@ const BillBoard = ({ props }) => {
       </Modal>
 
         <h1 className='head'>Your listed rooms</h1>
-        <div className="categories">
+        <div className="categories" id="gories">
           {rooms.map((i) => (
             <div className="category" key={i._id}>
               <div className="image" onClick={() => handleClick(i)}><img src={i.photo} /></div>
@@ -305,7 +307,7 @@ const BillBoard = ({ props }) => {
       textOverflow: 'ellipsis'}}>{i.title}</span></p>
                 </div>
               </div>
-              <div className="form-check form-switch" style={{ position: 'relative', left: '0.5cm', bottom: '0.4cm' }}>
+              <div className="form-check form-switch" style={{ position: 'relative', }}>
                 <input
                   className="form-check-input"
                   type="checkbox"

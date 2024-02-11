@@ -85,21 +85,25 @@ const SignUp = (props) => {
     <>
 
     <div className="sinup" style={{display: 'flex'}}>
-    <div className="left" style={{ display: 'flex', width: '38%', height: '100vh', backgroundColor: 'black', alignItems:'center', justifyContent: 'center' }}>
+    <div className="left" style={{  width: '38%', height: '100vh', backgroundColor: 'black', alignItems:'center', justifyContent: 'center' }}>
   {/* <div className="tope" style={{ color: 'white', display:'flex',   boxShadowShadow: '0 0 20px rgba(255, 255, 255, 0.9)' }}> */}
   <div className="tope" style={{ color: 'white', display:'flex', boxShadow: '0 0 20px rgba(255, 255, 255, 0.9)', padding: '10px', borderRadius: '10px' }}>
-  <img src={torentologo} style={{width:'300px', marginBottom:'3cm',color: 'white', display:'flex', boxShadow: '0 0 20px rgba(255, 255, 255, 0.9)', padding: '10px', borderRadius: '10px'}} alt="hello" />
+  <img src={torentologo} style={{width:'300px',color: 'white', display:'flex', boxShadow: '0 0 20px rgba(255, 255, 255, 0.9)', padding: '10px', borderRadius: '10px'}} alt="hello" />
   </div>
   
 </div>
 
     {/* <div className="left" style={{display: 'flex', width: '38%', height:'100vh', backgroundColor: 'black'}}><h1 className="tope" style={{color:'white', marginTop:'8cm'}}>TORENTO</h1></div> */}
-        <div className='right' style={{marginTop:'5.7cm', marginLeft:'7cm'}}>
+        <div className='right' >
+
+        <div className="tope1" style={{ color: 'white',  boxShadow: '0 0 20px rgba(255, 255, 255, 0.9)', padding: '10px' }}>
+  <img src={torentologo}  alt="hello" />
+  </div>
       
       <h2 class="font-bold text-xl">SignUp</h2>
       <br />
     
-    <form onSubmit={handleSubmit} style={{ width: '9cm', margin: 'auto' }}>
+    <form className='furm' onSubmit={handleSubmit} style={{ width: '9cm', margin: 'auto' }}>
     <div className="mb-3" >
         {/* <label htmlFor="exampleInputEmail1" className="form-label">Name</label> */}
         <input
@@ -152,12 +156,9 @@ const SignUp = (props) => {
       </div>
       <button disabled={loading} style={{backgroundColor:'#0d6efd'}} type="submit" className="btn btn-primary">SignUp</button>
     </form>
-    <Link disabled={loading} style={{color:'gray'}} to="/login" role="button">Login</Link>
-    <img  style={{display:loading?'':'none',height:"2cm", position:'relative',left:'1.7cm'}} src={loader} alt="" />
+    <Link className='lin'  disabled={loading} style={{color:'gray'}} to="/login" role="button">Login</Link>
+    <img className='loade'  style={{display:loading?'':'none',height:"2cm", position:'relative',left:'1.7cm'}} src={loader} alt="" />
     </div>
-
-   
-
     </div>
     </>
   )

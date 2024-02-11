@@ -1,0 +1,19 @@
+@import "../../css-config/mixins.scss";
+
+.clickHere{
+    position:relative;
+    // font-size: 4cm;
+    right:3cm;
+
+}
+
+@media(max-width: 760px){
+  .clickHere{
+    padding-top: 2cm;
+    right: 1.8cm;
+  }
+  .padder{
+    padding: 0.8cm;
+  }
+   
+}

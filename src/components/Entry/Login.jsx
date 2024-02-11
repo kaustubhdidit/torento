@@ -67,6 +67,7 @@ const Login = (props) => {
 
   return (
     <>
+    <div className="logHolder">
 
 <div style={{ display:'flex',justifyContent:'center',alignItems:'center'}}>
       {/* <h1 className="tope">TORENTO</h1> */}
@@ -103,6 +104,7 @@ const Login = (props) => {
     <Link disabled={loading} style={{color:'gray'}} to="/SignUp" role="button">SignUp</Link>
     <div style={{display:'flex', justifyContent:'center'}}>
     <img  style={{display:loading?'':'none',height:"2cm"}} src={loader} alt="" />
+    </div>
     </div>
     </>
   );

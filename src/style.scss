@@ -56,7 +56,7 @@
       input {
         padding: 15px;
         border: none;
-        width: 250px;
+        // width: 250px;
         border-bottom: 1px solid #a7bcff;
         &::placeholder {
           color: rgb(175, 175, 175);
@@ -423,4 +423,28 @@ position: relative;
     margin: 0px;
     width: 1528px;
   }
+}
+
+@media(max-width: 760px){
+  .input{
+   width: 11.3cm;
+   input{
+    width: 7.8cm;
+    // display: none;
+  }
+  .selechat{
+    position: relative;
+    top: 2cm;
+  }
+  }
+  .message{
+    width: 10.5cm;
+    // position: relative;
+    left: 0.25cm;
+    // right: 0.05cm;
+    // img{
+    //     width: 6cm;
+    // }
+  }
+  
 }

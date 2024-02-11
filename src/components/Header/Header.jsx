@@ -40,13 +40,13 @@ const Header = () => {
   return (
     <header className='main-header'>
     <div className='header-content'>
-        <ul className="left">
-            <li onClick={()=>handleClick("/")}>Home</li>
-            <li>Rooms</li>
+        <ul className="leftH">
+            <li className='hme' onClick={()=>handleClick("/")}>Home</li>
+            {/* <li>Rooms</li> */}
             <li onClick={()=>handleClic("/chats") }>Chats</li>
             {/* <li>Search By</li> */}
         </ul>
-        <ul className="right">
+        <ul className="rightH">
         <li onClick={()=>handleClick("/login") } style={{ display: localStorage.getItem('rentoToken') ? 'none':'' }}
 >Login</li>
 <li onClick={handleOut} style={{ display: !localStorage.getItem('rentoToken') ? 'none':'' }}
@@ -54,7 +54,28 @@ const Header = () => {
 <li onClick={()=>handleClic("/Bill")}>BillBoard</li>
         <li onClick={()=>handleClic("/Sell")}>Sell</li>
         </ul>
-        <div className="center" style={{backgroundImage: "linear-gradient(to right,#808BE6, #3ACBE9)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", textTransform: "capitalize"}}>TORENTO</div>       
+        <div  onClick={()=>handleClick("/")} className="center" id='logo' style={{backgroundImage: "linear-gradient(to right,#808BE6, #3ACBE9)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", textTransform: "capitalize"}}>TORENTO</div>
+
+        <section class="p-menu1" id='penu'>
+          
+  <nav id="navbar" class="navigation" role="navigation">
+    <input id="toggle1" type="checkbox" />
+    <label class="hamburger1" for="toggle1">
+      <div class="top"></div>
+      <div class="meat"></div>
+      <div class="bottom"></div>
+    </label>
+  
+    <nav class="menu1">
+      <a class="link1" onClick={()=>handleClick("/login") } style={{ display: localStorage.getItem('rentoToken') ? 'none':'' }} href="">Login</a>
+      <a class="link1" onClick={handleOut} style={{ display: !localStorage.getItem('rentoToken') ? 'none':'', marginTop:'40px' }} href="">Logout</a>
+      <a class="link1" onClick={()=>handleClic("/Sell")} href="">Sell</a>
+      <a class="link1" onClick={()=>handleClic("/chats") } href="">Chats</a>
+      <a class="link1" onClick={()=>handleClic("/Bill")} href="">BillBoard</a>
+      {/* <a class="lin1 kbutton-nav" href="">Contact</a> */}
+    </nav>
+</nav>
+</section>      
     </div>
     </header>
   )

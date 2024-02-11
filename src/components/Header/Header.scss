@@ -1,5 +1,15 @@
 @import "../../css-config/mixins.scss";
+@media (min-width: 761px) {
+    #penu {
+      display: none;
+    }
+  }
+  
 .main-header{
+
+    // #navbar{
+    //     display: none;
+    // }
     width: 100%;
     padding: 0 20px;
     // background-color: #367b9b;
@@ -12,12 +22,7 @@
     }
 
     li:hover{
-        // transition: all;
-       
-        // padding: 7px;
-        //    background-color: white; 
            background-image: linear-gradient(to right, #304e6c, #118bb7);
-        //    color: black;
     }
     li{
         border-radius: 8px;
@@ -35,10 +40,11 @@
             height: 80px;
         }
         
-        .left{
+        .leftH{
             // margin-top: 0.5cm;
             list-style-type: none;
-            display: none;
+            // display: none;
+            display: flex;
             gap: 25px;
             @include md{
                 display: flex;
@@ -50,10 +56,10 @@
                 cursor: pointer;
             }
         }
-        .right{
+        .rightH{
             // margin-top: 0.5cm;
             list-style-type: none;
-            display: none;
+            // display: none;
             gap: 25px;
             @include md{
                 display: flex;
@@ -76,34 +82,12 @@
                 transform: translateX(-50%);
             }
         }
-        .right{
+        .rightH{
             display: flex;
             align-items: center;
             gap: 20px;
             @include md{
                 gap: 25px;
-            }
-            svg{
-                font-size: 20px;
-                cursor: pointer;
-                @include md{
-                    font-size: 24px;
-                }
-            }
-            .cart-icon{
-                position: relative;
-                span{
-                    min-width: 20px;
-                    text-align: center;
-                    background-color: #8e2de2;
-                    padding: 2.5px;
-                    position: absolute;
-                    top: -5px;
-                    right: -12px;
-                    font-size: 12px;
-                    line-height: 1;
-                    border-radius: 10px;
-                    }
             }
         }
     }
@@ -119,4 +103,162 @@
 @keyframes stickyHeader {
     0% {transform: translateY(-80px);}
     100% {transform: translateY(0);}
+}
+
+
+@media(max-width: 760px){
+ 
+    
+    .hme{
+        display: none;
+    }
+    .main-header{
+        height: 2cm;
+        position: fixed;
+        z-index: 2;
+    }
+    .header-content{
+        position: relative;
+        top: 0.45cm;
+        .rightH{
+            display: block;
+        }
+        li{
+            display: none;
+        }
+    }
+    #logo{
+        scale: 1.7;
+        position: relative;
+        bottom: 0.16cm;
+        // right: 0.2cm;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+      }
+      
+      .p-menu1{
+         height: 100%;
+      }
+
+      #penu{
+        position: relative;
+        right: 3cm;
+      }
+      
+      
+      
+      
+      /* Hamburger */
+      .hamburger1 {
+        scale: 0.8;
+        height: 45px;
+        margin: 10px;
+        display: -ms-grid;
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        justify-items: center;
+        z-index: 120;
+        position: relative;
+        bottom: 0.33cm;
+      }
+      
+      .hamburger1 div {
+        background-color: rgb(61, 61, 61);
+        position: relative;
+        width: 40px;
+        height: 5px;
+        margin-top: 7px;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+      }
+      
+      #toggle1 {
+        display: none;
+      }
+      
+      #toggle1:checked + .hamburger1 .top {
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        margin-top: 22.5px;
+      }
+      
+      #toggle1:checked + .hamburger1 .meat {
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+        margin-top: -5px;
+      }
+      
+      #toggle1:checked + .hamburger1 .bottom {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+      }
+      
+      #toggle1:checked ~ .menu1 {
+        height: 340px;
+      }
+      
+      
+      /* Menu */
+      .menu1 {
+        position: relative;
+        right: 1.8cm;
+        width: 100%;
+        background-color: #03162ed5;
+        background-image: linear-gradient(to right, #23252998, #0a0a0e);
+        margin: 0;
+        border-radius: 0.3cm;
+        display: -ms-grid;
+        display: grid;
+        grid-template-rows: 1fr repeat(4, 0.5fr);
+        grid-row-gap: 25px;
+        padding: 0;
+        list-style: none;
+        clear: both;
+        
+        width: auto;
+        text-align: center;
+        height: 0px;
+        overflow: hidden;
+        transition: height .4s ease;
+        z-index: 120;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+      }
+      
+      .menu1 a:first-child {
+        margin-top: 40px;
+      }
+    //   #navbar{
+    //     display: contents;
+    // }
+      
+      .menu1 a:last-child {
+        margin-bottom: 40px;
+      }
+      #penu{
+        // width: 30px;
+        width: 6cm;
+        // display: none;
+        position: relative;
+        left: 2cm;
+        // bottom: 0.33cm;
+      }
+      
+      .link1 {
+        width: 100%;
+        margin: 0;
+        padding: 10px 0;
+        font: 700 20px 'Oswald', sans-serif;
+      }
+      
+      .link1:hover {
+        background-color: #fff;
+        color: rgb(61, 61, 61);
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+      }
+ 
 }

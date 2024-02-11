@@ -4,3 +4,18 @@ form{
     margin: 1cm;
 
 }
+.holder{
+    position:relative;
+     left:0.8cm;
+}
+@media(max-width: 760px){
+    form{
+        // position: relative;
+        // right: 1cm;
+    }
+    .holder{
+        left:0cm;
+        top: 2cm;
+    }
+   
+}

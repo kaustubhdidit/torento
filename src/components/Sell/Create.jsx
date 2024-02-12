@@ -34,7 +34,7 @@ const Create = (props) => {
 
         setCreden({ ...creden, photo: url });
 
-        const response = await fetch("https://rentoback-5kdr.onrender.com/api/v1/room/new", {
+        const response = await fetch("http://localhost:3001/api/v1/room/new", {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

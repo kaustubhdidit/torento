@@ -68,9 +68,10 @@ const Header = () => {
   
     <nav class="menu1">
       <a class="link1" onClick={()=>handleClick("/login") } style={{ display: localStorage.getItem('rentoToken') ? 'none':'' }} href="">Login</a>
-      <a class="link1" onClick={handleOut} style={{ display: !localStorage.getItem('rentoToken') ? 'none':'', marginTop:'40px' }} href="">Logout</a>
+      <a class="link1" onClick={handleOut} style={{ display: !localStorage.getItem('rentoToken') ? 'none':'' }} href="">Logout</a>
       <a class="link1" onClick={()=>handleClic("/Sell")} href="">Sell</a>
-      <a class="link1" onClick={()=>handleClic((window.innerWidth <= 760)?"/sidebar":"/chats") } href="">Chats</a>
+      <a class="link1" onClick={() => {localStorage.removeItem('chatFb'); handleClic( "/sidebar")} } href="">Chats</a>
+
       <a class="link1" onClick={()=>handleClic("/Bill")} href="">BillBoard</a>
       {/* <a class="lin1 kbutton-nav" href="">Contact</a> */}
     </nav>

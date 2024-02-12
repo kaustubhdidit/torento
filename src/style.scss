@@ -351,7 +351,8 @@ position: relative;
                 display: flex;       
                 flex-wrap: wrap;
                 max-width: 14cm;
-
+                // position: relative;
+                // left: 0.2cm;
                 text-align: left;
                 background-color: #4051eb;
                 color: white;
@@ -426,6 +427,10 @@ position: relative;
 }
 
 @media(max-width: 760px){
+  .messageContent{
+    position: relative;
+    left: 0.1cm;
+  }
   .input{
    width: 11.3cm;
    input{

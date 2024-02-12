@@ -30,7 +30,7 @@ const SignUp = (props) => {
             // console.log(email)
       
       
-            const response = await fetch("https://rentoback-5kdr.onrender.com/api/v1/users/new", {
+            const response = await fetch("http://localhost:3001/api/v1/users/new", {
                 method: "POST", 
                 headers: {
                   "Content-Type": "application/json",

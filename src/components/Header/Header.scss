@@ -197,7 +197,7 @@
       }
       
       #toggle1:checked ~ .menu1 {
-        height: 340px;
+        height: 290px;
       }
       
       
@@ -229,18 +229,29 @@
       }
       
       .menu1 a:first-child {
+        background-color: #118bb7;
+        // color: #fff;
         margin-top: 40px;
+      }
+      .menu1 a:nth-child(2){
+        margin-top: 20px;
+        // margin-top: 40px;
+        // background-color: #144556bb;
+      }
+      .menu1 a{
+        background-color: #1e25283f;
       }
     //   #navbar{
     //     display: contents;
     // }
       
       .menu1 a:last-child {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
       }
       #penu{
         // width: 30px;
         width: 6cm;
+        // height: 2cm;
         // display: none;
         position: relative;
         left: 2cm;

@@ -15,7 +15,7 @@ const Category = ({ categories }) => {
 
   useEffect(() => {
     // Fetch data from the API
-    axios.get("https://rentoback-5kdr.onrender.com/api/v1/room/roomAll")
+    axios.get("http://localhost:3001/api/v1/room/roomAll")
       .then((res) => {
         // console.log("first")
         // console.log(res.data.rooms)

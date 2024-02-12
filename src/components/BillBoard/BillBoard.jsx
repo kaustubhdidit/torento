@@ -62,7 +62,7 @@ const BillBoard = ({ props }) => {
 
     // console.log(price)
     // API Call
-    const response = await fetch(`https://rentoback-5kdr.onrender.com/api/v1/room/vac/${i._id}`, {
+    const response = await fetch(`http://localhost:3001/api/v1/room/vac/${i._id}`, {
       method: "PUT", 
       headers: {
         "Content-Type": "application/json",
@@ -88,7 +88,7 @@ const BillBoard = ({ props }) => {
 
     // console.log(price)
     // API Call
-    const response = await fetch(`https://rentoback-5kdr.onrender.com/api/v1/room/edit/${id}`, {
+    const response = await fetch(`http://localhost:3001/api/v1/room/edit/${id}`, {
       method: "PUT", 
       headers: {
         "Content-Type": "application/json",
@@ -125,7 +125,7 @@ const BillBoard = ({ props }) => {
 
   const handleDel = async (rinfo) => {
     try {
-      const response = await fetch(`https://rentoback-5kdr.onrender.com/api/v1/room/del/${rinfo._id}`, {
+      const response = await fetch(`http://localhost:3001/api/v1/room/del/${rinfo._id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -158,7 +158,7 @@ const BillBoard = ({ props }) => {
   useEffect(() => {
     // console.log(localStorage.getItem('token'));
 
-    axios.get('https://rentoback-5kdr.onrender.com/api/v1/room/my', {
+    axios.get('http://localhost:3001/api/v1/room/my', {
       params: {
         userid: localStorage.getItem('rentoToken'),
       },
